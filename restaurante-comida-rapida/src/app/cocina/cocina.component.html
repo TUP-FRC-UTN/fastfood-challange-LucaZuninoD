@@ -1,0 +1,18 @@
+<h2>Componente Cocina</h2>
+
+<h3>Pedidos Pendientes de Cocinar</h3>
+<ul>
+  <li *ngFor="let pedido of pedidosPendientes">
+    Pedido #{{ pedido.numero }}: {{ pedido.descripcion }}
+    <button (click)="iniciarCoccion(pedido)" [disabled]="pedidoEnCoccion">Cocinar</button>
+  </li>
+</ul>
+
+<h3>Pedido en Cocción</h3>
+<div *ngIf="pedidoEnCoccion; else noPedidoEnCoccion">
+  <p>Pedido #{{ pedidoEnCoccion.numero }}: {{ pedidoEnCoccion.descripcion }}</p>
+  <button (click)="finalizarCoccion()">Pedido Terminado</button>
+</div>
+<ng-template #noPedidoEnCoccion>
+  <p>No hay pedidos en cocción en este momento.</p>
+</ng-template>

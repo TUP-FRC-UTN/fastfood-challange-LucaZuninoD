@@ -1,0 +1,16 @@
+<h2>Punto de Entrega</h2>
+
+<h3>Pedidos Listos para Entregar</h3>
+<ul>
+  <li *ngFor="let pedido of pedidosListos">
+    Pedido #{{ pedido.numero }}: {{ pedido.descripcion }} para {{ pedido.nombre }}
+    <button (click)="entregarPedido(pedido)">Entregar</button>
+  </li>
+</ul>
+
+<h3>Pedidos Entregados</h3>
+<ul>
+  <li *ngFor="let pedido of pedidosEntregados">
+    Pedido #{{ pedido.numero }}: {{ pedido.descripcion }} para {{ pedido.nombre }}
+  </li>
+</ul>
